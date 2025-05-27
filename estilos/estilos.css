@@ -50,7 +50,13 @@ body {
 
 .positionfixed{
     position: fixed;
-    bottom: 5%;
+    bottom: 10%;
     right: 5%;
     width: 6vh;
 }
+
+@media (max-width: 800px) {
+    .positionfixed {
+        display: none;
+    }
+  }
