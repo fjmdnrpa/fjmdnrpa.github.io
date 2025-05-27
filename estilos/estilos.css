@@ -30,7 +30,7 @@ h2 {
 }
 
 h4 {
-  font-size: 2.2vh;
+  font-size: 3vh;
   color: #222;
 }
 
@@ -47,16 +47,3 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
-
-.positionfixed{
-    position: fixed;
-    bottom: 10%;
-    right: 5%;
-    width: 6vh;
-}
-
-@media (max-width: 800px) {
-    .positionfixed {
-        display: none;
-    }
-  }
