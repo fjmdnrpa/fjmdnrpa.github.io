@@ -1,0 +1,49 @@
+/* importaciones de estilos */
+@import url(header.css);
+@import url(libros.css);
+@import url(cabecera.css);
+@import url(piedepagina.css);
+/*fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Sansation;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos Globales */
+
+h1 {
+  font-size: 6vh;
+  line-height: 6vw;
+  color: #222;
+}
+
+h2 {
+  font-size: 5vh;
+  line-height: 4vw;
+  color: #222;
+  
+}
+
+h4 {
+  font-size: 3vh;
+  color: #222;
+}
+
+.section-p1 {
+  padding: 2vw;
+  margin-top: 2vh;
+
+}
+
+body {
+  width: 100%;
+  min-width: 300px;
+  background-image: url("../imagenes/fondo230.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
