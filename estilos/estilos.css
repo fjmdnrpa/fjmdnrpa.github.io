@@ -1,5 +1,4 @@
 /* importaciones de estilos */
-@import url(header.css);
 @import url(libros.css);
 @import url(cabecera.css);
 @import url(piedepagina.css);
@@ -18,19 +17,19 @@ html {
 
 h1 {
   font-size: 6vh;
-  line-height: 6vw;
   color: #222;
 }
 
 h2 {
   font-size: 5vh;
-  line-height: 4vw;
+  font-weight: 700;
   color: #222;
   
 }
 
 h4 {
   font-size: 3vh;
+  font-weight: 700;
   color: #222;
 }
 
