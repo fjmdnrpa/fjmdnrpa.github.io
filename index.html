@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <!--<link rel="stylesheet" href="estilos/fuentes.css">-->
+    <title>Macondo Ecommerce </title>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#">
+            <img src="imagenes/logo.png" id="logo" class="logo" alt="logo libreria-macondo">
+        </a>
+        <input type="text" class="busqueda" name ="busqueda" placeholder="¿Que estas buscando?">
+        <div>
+            <ul id="navbar" class="navbar">
+                <li class="menuitem"><a href="#novedades">Novedades</a></li>
+                <li class="menuitem"><a href="#masvendidos">Mas vendidos</a></li>
+                <li class="menuitem"><a href="#recomendados">Recomendados</a></li>
+                <li class="menuitem" id="botonRegistro">Registrarse</li>
+                <!--<li class="menuitem"><a href="paginas/contacto.html" target="_blank">Contacto</a></li>-->
+                <li>
+                    <a href="paginas/carrito.html">
+                        <img class="carrito" src="imagenes/cart.png" alt="">
+                        <!--<i class="fa fa-shopping-bag" aria-hidden="true"></i>-->
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="section-libros section-p1">
+            <h2 id="novedades">Novedades</h2>
+            <div class="libros-container" id = "librosContainerNovedades">
+
+            </div>
+            <h2 id="masvendidos">Mas Vendidos</h2>
+            <div class="libros-container" id = "librosContainerVendidos">
+
+            </div>
+            <h2 id="recomendados">Recomendados</h2>
+            <div class="libros-container" id = "librosContainerRecomendados">
+
+            </div>
+        </section>
+        <footer id="pie-pagina" class="pie-pagina">
+            <ul class="enlacespie">
+                <li><a href="https://facebook.com" target="_blank"><img class="iconos" src="imagenes/facebook.png" alt="facebook"></a></li>
+                <li><a href="https://instagram.com" target="_blank"><img class="iconos" src="imagenes/instagram.png" alt="instagram"></a></li>
+                <li><a href="https://whatsapp.com" target="_blank"><img class="iconos" src="imagenes/whatsapp.png" alt="whatsapp"></a></li>
+                <li><a href="mailto:libreria-macondo@gmail.com"><img class="iconos" src="imagenes/mail.png" alt="mail"></a></li>
+                <li class="menuitem" id="botonContacto">Contacto</li>
+            </ul>
+            <p class="parrafo">© 2025 Libreria Macondo - Todos los derechos reservados</p>
+        </footer>
+    </main>
+    <script src="javas/index.js"></script>
+</body>
+
+</html>
