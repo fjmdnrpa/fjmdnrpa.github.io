@@ -35,7 +35,7 @@
         text-decoration: none;
         font-size: 2vw;
         font-weight: 600;
-        color: #1a1a1a;
+        color: #222;
         transition: 0.5 ease;
     }
 
@@ -45,9 +45,10 @@
 
     #botonRegistro {
         text-decoration: none;
+        cursor: pointer;
         font-size: 2vw;
         font-weight: 600;
-        color: #1a1a1a;
+        color: #222;
         transition: 0.5 ease;
     }
 

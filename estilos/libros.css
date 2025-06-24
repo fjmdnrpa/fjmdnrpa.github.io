@@ -17,7 +17,7 @@
             margin: 1vh;
             border-radius: 20px;
             border: 1px solid #cce7d0;
-            cursor: pointer;
+            /*cursor: pointer;*/
             background-color: #eeec;
 
             img {
@@ -43,6 +43,7 @@
 
             .carrito{
                 width: 6vh;
+                cursor: pointer;
                 }
 
         }
