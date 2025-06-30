@@ -1,0 +1,87 @@
+.contenedorCarritoCompras {
+    margin:0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.elementos-carrito {
+    border: 1px solid #eee;
+    padding: 15px;
+    min-height: 200px;
+}
+
+.item-carrito {
+    font-size: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.item-carrito:last-child {
+    border-bottom: none;
+}
+
+.total {
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: right;
+}
+
+/* Estilos para los botones */
+#vaciarCarrito {
+    font-size: 2vh;
+    background-color: #f00;
+    border-radius: 20px;
+    color: white;
+    padding: 1vh 2vh;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#vaciarCarrito:hover {
+    opacity: 0.8;
+}
+
+/* Estilo específico para el botón de eliminar individual */
+.btn-eliminar-item {
+    font-size: 2vh;
+    background-color: #f00;
+    /* Un rojo anaranjado */
+    border-radius: 20px;
+    color: white;
+    padding: 1vh 2vh;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8em;
+    margin-left: 5vw;
+    /* Espacio a la izquierda del nombre del producto */
+}
+
+.btn-eliminar-item:hover {
+    opacity: 0.9;
+}
+
+.volverTienda {
+    display: block;
+    margin-top: 30px;
+}
+
+.volverTienda a {
+    font-size: 2vh;
+    background-color: #08f;
+    color: white;
+    padding: 1vh 2vh;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.volverTienda a:hover {
+    opacity: 0.8;
+}

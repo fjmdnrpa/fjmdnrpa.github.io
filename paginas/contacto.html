@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" translate="no"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="contacto">
+        <form class= "formularioContacto" action="url" method="get">
+            <h2 class="tituloFormulario">Formulario de contacto</h2>
+            <div>
+                <input type="text" class = "ingresoTexto" id ="nombre" placeholder="Escribe tu nombre">
+                <div class="errorTexto"></div>
+            </div>
+            <div>
+                <input type="text" class = "ingresoTexto" id ="apellido" placeholder="Escribe tu apellido">
+                <div class="errorTexto"></div>
+            </div>
+            <div>
+                <input type="email" class = "ingresoTexto" id = "email" placeholder="Escribe tu email">
+                <div class="errorTexto"></div>
+            </div>
+            <div>
+                <textarea name="mensaje" class = "ingresoTexto" id="mensaje" rows="8" cols="40" placeholder="Escribe tu consulta"></textarea>
+                <div class="errorTexto"></div>
+            </div>
+            <div>
+                <button class="botonEnviar" type="submit">Enviar</button>
+            </div>
+ 
+        </main>
+        <script src="../javas/contacto.js"></script>
+</body>
+</html>

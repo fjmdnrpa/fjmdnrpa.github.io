@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Tages';
+    src:url('fuentes/Tagesschrift-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sansation';
+    src:url('fuentes/Sansation-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
