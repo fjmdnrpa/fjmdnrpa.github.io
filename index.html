@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <!--<link rel="stylesheet" href="estilos/fuentes.css">-->
     <title>Macondo Ecommerce </title>
 </head>
@@ -22,18 +23,24 @@
         </a>
         <div>
             <ul id="navbar" class="navbar">
-                <li class="menuitem"><a href="#novedades">Novedades</a></li>
-                <li class="menuitem"><a href="#masvendidos">Mas vendidos</a></li>
-                <li class="menuitem"><a href="#recomendados">Recomendados</a></li>
+                <li id = "enlaceNovedades" class="menuitem"><a href="#novedades">Novedades</a></li>
+                <li id = "enlaceVendidos"class="menuitem"><a href="#masvendidos">Mas vendidos</a></li>
+                <li id = "enlaceRecomendados"class="menuitem"><a href="#recomendados">Recomendados</a></li>
                 <li class="menuitem" id="botonRegistro">Registrarse</li>
-                <!--<li class="menuitem"><a href="paginas/contacto.html" target="_blank">Contacto</a></li>-->
                 <li>
                     <a href="paginas/carrito.html">
                         <img class="carrito" src="imagenes/cart.png" alt="">
-                        <!--<i class="fa fa-shopping-bag" aria-hidden="true"></i>-->
                     </a>
                 </li>
+                <!-- Boton Cerrar -->
+                <a href="#" id="cerrar" class="cerrar" >
+                    <i class="far fa-times"></i>
+                </a>
             </ul>
+        </div>
+        <!-- version responsive -->
+        <div class="mobile">
+            <i id="bar" class="fas fa-outdent"></i>
         </div>
     </header>
     <main>
@@ -72,6 +79,7 @@
             <p class="parrafo">© 2025 Libreria Macondo - Todos los derechos reservados</p>
         </footer>
     </main>
+    <script src="javas/header.js"></script>
     <script src="javas/index.js"></script>
 </body>
 

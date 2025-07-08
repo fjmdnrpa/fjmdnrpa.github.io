@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let total = 0;
 
         if (carrito.length === 0) {
-            librosCarrito.innerHTML = '<p>El carrito está vacío.</p>';
+            librosCarrito.innerHTML = '<p class="carritoVacio">El carrito está vacío.</p>';
             totalCarrito.textContent = 'Total: $0.00';
-            console.log("carrito vacio");
+            vaciarCarrito.hidden = true;
             return;
         }
         
@@ -22,13 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
             total += libro.precio * libro.cantidad; // Acumular el total
 
             return `
-                        <div class="item-carrito">
-                            <span>${libro.titulo} &nbsp (&nbspx&nbsp${libro.cantidad}&nbsp)</span>
+                    <div class="item-carrito">
+                        <img class=imagenCarrito src="${libro.imagen}" alt="${libro.titulo}">        
+                        <span class ="tituloLibro">${libro.titulo}</span>
+                        <input id="cantidad-${libro.isbn}" class="cantidadCarrito" type="number" min="1" max="100" value=${libro.cantidad} />
                             <div>
-                                <span> &nbsp&nbsp&nbsp $${(libro.precio * libro.cantidad).toFixed(2)}</span>
-                                <button class="btn-eliminar-item" id="eliminar-${libro.isbn}">Eliminar</button>
+                                <span>$${(libro.precio * libro.cantidad).toFixed(2)}</span>
+                                <button class="btn-eliminar-item" id="eliminar-${libro.isbn}">X</button>
                             </div>
-                        </div>
+                    </div>            
                     `;
         });
 
@@ -50,6 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        carrito.forEach(libro => {
+            const botonEliminar = document.getElementById(`cantidad-${libro.isbn}`);
+            if (botonEliminar) { // Asegurarse de que el botón exista
+                botonEliminar.addEventListener('change', () => {
+                    // Cuando se hace clic, ya tenemos acceso al ID del item original
+                    modificarCantidadLibro(libro.isbn);
+                });
+            }
+        });
+
     function eliminarLibroCarrito(isbn) {
         //Treaemos el carrito de compras del loca storage y si no existe creamos uno vacio 
         //Convertimos el string que esta en local storaga a array u objeto con el metodo JASON.parse  
@@ -58,13 +70,46 @@ document.addEventListener('DOMContentLoaded', () => {
         const carritoActualizado = carrito.map(libro => {
             if (libro.isbn === isbn) {
                 // Creamos un nuevo objeto con las propiedades exactas que necesitamos.
-                // Copiamos id, nombre, precio y reducimos la cantidad.
+                // Copiamos id, nombre, precio y la cantidad en cero 
                 return {
                     isbn: libro.isbn,
+                    imagen:libro.imagen,
                     titulo: libro.titulo,
                     autor: libro.autor,
                     precio: libro.precio,
-                    cantidad: libro.cantidad - 1 // Aquí se decrementa la cantidad
+                    cantidad: 0 // Aquí se decrementa la cantidad
+                //continue
+                };
+            }
+            return libro; // Si no es el producto a modificar, lo devolvemos tal cual
+        }).filter(libro => libro.cantidad > 0); //Mantiene solo aquellos ítems cuya cantidad sea mayor que cero
+        //Volvemos a cargar el carrito actualizado al local storage
+        //Convertimos el array a un string para cargarlo en local storage metodo JASON.stringfy           
+        localStorage.setItem('carritoDeCompras', JSON.stringify(carritoActualizado));
+        renderizarCarrito();
+        }
+
+    function modificarCantidadLibro (isbn){
+        //Treaemos el carrito de compras del loca storage y si no existe creamos uno vacio 
+        //Convertimos el string que esta en local storaga a array u objeto con el metodo JASON.parse  
+        let carrito = JSON.parse(localStorage.getItem('carritoDeCompras')) || [];
+        //Buscamos el elemento a eliminar en todo el array
+        const carritoActualizado = carrito.map(libro => {
+            if (libro.isbn === isbn) {
+                // Obtenemos el input que fue modificado
+                const input = document.activeElement;
+                // lo convettimos a numero para  poder operar 
+                const nuevaCantidad = parseInt(input.value);
+                // Creamos un nuevo objeto con las propiedades exactas que necesitamos.
+                // Copiamos id, nombre, precio y la cantidad actuazalizada 
+                return {
+                    isbn: libro.isbn,
+                    imagen:libro.imagen,
+                    titulo: libro.titulo,
+                    autor: libro.autor,
+                    precio: libro.precio,
+                    cantidad: nuevaCantidad
+                //continue
                 };
             }
             return libro; // Si no es el producto a modificar, lo devolvemos tal cual

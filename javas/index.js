@@ -189,7 +189,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             carrito.push({
                 isbn: libroAAgregar.isbn,
-                titulo: libroAAgregar.titulo,
+                imagen:"../" + libroAAgregar.imagen,
+                titulo:libroAAgregar.titulo,
                 autor: libroAAgregar.autor,
                 precio:libroAAgregar.precio,
                 cantidad: 1
@@ -224,10 +225,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const botonContacto = document.getElementById("botonContacto");
     botonContacto.onclick = () => {
         window.open("paginas/contacto.html","Contacto","width=600,height=400");
-    };
-    //Ontegno el boton de registro para poder abrir la pagina en una ventana emergente
-    const botonRegistro = document.getElementById("botonRegistro");
-    botonRegistro.onclick = () => {
-        window.open("paginas/registro.html","Contacto","width=400,height=400");
-    };
+    }
 })
