@@ -1,0 +1,46 @@
+    [
+        {
+            "isbn":"9789877950908",
+            "imagen":"./imagenes/valorados1.webp",
+            "titulo":"Amistad",
+            "autor":"Mariano Sigman / Jacobo Bergareche",
+            "precio": 21.999
+        },
+        {
+            "isbn":"9789500216272",
+            "imagen":"./imagenes/valorados2.webp",
+            "titulo":"Decodifica tu vida",
+            "autor":"Flor Cerutti",
+            "precio": 21.900
+        },
+        {
+            "isbn":"9789504990994",
+            "imagen":"./imagenes/valorados3.webp",
+            "titulo":"Por si un dia volvemos",
+            "autor":"Maria Dueñas",
+            "precio": 45.000
+        },
+        {
+            "isbn":"9786316533258",
+            "imagen":"./imagenes/valorados4.webp",
+            "titulo":"La libreria de Tokio",
+            "autor":"Nanako Hanada",
+            "precio": 16.900
+        },
+        {
+            "isbn":"9789873626012",
+            "imagen":"./imagenes/valorados5.webp",
+            "titulo":"Criaturas despiadadas",
+            "autor":"J. T. Geissinger",
+            "precio": 19.900
+        },
+        {
+            "isbn":"9789506447557",
+            "imagen":"./imagenes/valorados6.webp",
+            "titulo":"No tengas miedo",
+            "autor":"Stephen King",
+            "precio": 41.999
+        }
+    ]
+
+

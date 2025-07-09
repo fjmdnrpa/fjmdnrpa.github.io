@@ -1,0 +1,44 @@
+[
+    {   
+        "isbn":"9789876708364",
+        "imagen":"./imagenes/novedades1.webp",
+        "titulo":"La traicion de mi lengua",
+        "autor":"Camila Sosa Villada",
+        "precio": 21.900
+    },
+    {
+        "isbn":"9786313003419",
+        "imagen":"./imagenes/novedades2.webp",
+        "titulo":"Ana Frank antes del diario",
+        "autor":"Alice Hoffman",
+        "precio": 27.000
+    },
+    {
+        "isbn":"9786313011643",
+        "imagen":"./imagenes/novedades3.webp",
+        "titulo":"Ardera el viento",
+        "autor":"Guillermo Sacomano",
+        "precio": 31.999
+    },
+    {
+        "isbn":"9789504990697",
+        "imagen":"./imagenes/novedades4.webp",
+        "titulo":"Recetas para vivir mejor y mas tiempo",
+        "autor":"Daniel López Rosetti",
+        "precio": 36.900
+    },
+    {
+        "isbn":"9789507884818",
+        "imagen":"./imagenes/novedades5.webp",
+        "titulo":"Rea(r)marme",
+        "autor":"Valeria Schapira",
+        "precio": 20.000
+    },
+    {
+        "isbn":"9789506447564",
+        "imagen":"./imagenes/novedades6.webp",
+        "titulo":"Inocentes",
+        "autor":"John Grisham",
+        "precio": 37.499
+    }
+]

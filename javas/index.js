@@ -1,150 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const fuenteLibrosNovedades = [
-        {   
-            isbn:"9789876708364",
-            imagen:"imagenes/novedades1.webp",
-            titulo:"La traicion de mi lengua",
-            autor:"Camila Sosa Villada",
-            precio: 21.900
-        },
-        {
-            isbn:"9786313003419",
-            imagen:"imagenes/novedades2.webp",
-            titulo:"Ana Frank antes del diario",
-            autor:"Alice Hoffman",
-            precio: 27.000
-        },
-        {
-            isbn:"9786313011643",
-            imagen:"imagenes/novedades3.webp",
-            titulo:"Ardera el viento",
-            autor:"Guillermo Sacomano",
-            precio: 31.999
-        },
-        {
-            isbn:"9789504990697",
-            imagen:"imagenes/novedades4.webp",
-            titulo:"Recetas para vivir mejor y mas tiempo",
-            autor:"Daniel López Rosetti",
-            precio: 36.900
-        },
-        {
-            isbn:"9789507884818",
-            imagen:"imagenes/novedades5.webp",
-            titulo:"Rea(r)marme",
-            autor:"Valeria Schapira",
-            precio: 20.000
-        },
-        {
-            isbn:"9789506447564",
-            imagen:"imagenes/novedades6.webp",
-            titulo:"Inocentes",
-            autor:"John Grisham",
-            precio: 37.499
+
+    const fuenteLibrosNovedades = [];
+    const fuenteLibrosVendidos = [];
+    const fuenteLibrosRecomendados = [];
+
+    Promise.all([
+        cargarDatos(fuenteLibrosNovedades, './data/novedades.json'),
+        cargarDatos(fuenteLibrosVendidos, './data/vendidos.json'),
+        cargarDatos(fuenteLibrosRecomendados, './data/recomendados.json')
+    ]).then(() => {
+        randerizarLibros();
+    });
+
+    async function cargarDatos(fuenteLibros,url) {
+        try {
+           const respuesta = await fetch(url); // Reemplaza con la URL correcta
+           const datos = await respuesta.json();
+
+          // Itera sobre los datos y agrégalos al array
+        for (const elemento of datos) {
+           fuenteLibros.push(elemento);
         }
-    ]
-
-    const fuenteLibrosVendidos = [
-        {
-            isbn:"9789878121383",
-            imagen:"imagenes/vendidos1.webp",
-            titulo:"Amanecer en la cosecha",
-            autor:"Suzanne Collins",
-            precio: 34.990,
-        },
-        {
-            isbn:"9789877693898",
-            imagen:"imagenes/vendidos2.webp",
-            titulo:"El buen mal",
-            autor:"Samanta Schweblin",
-            precio: 24.999
-        },
-        {
-            isbn:"9786313011551",
-            imagen:"imagenes/vendidos3.webp",
-            titulo:"Demasiado lejos",
-            autor:"Eduardo Sacheri",
-            precio: 37.499
-        },
-        {
-            isbn:"2900107287848",
-            imagen:"imagenes/vendidos4.webp",
-            titulo:"Besos de cristal",
-            autor:"Anabella Franco",
-            precio: 31.900
-        },
-        {
-            isbn:"9789507326424",
-            imagen:"imagenes/vendidos5.webp",
-            titulo:"El secreto de Marcial",
-            autor:"Jorge Fernandez Diaz",
-            precio: 30.900
-        },
-        {
-            isbn:"9789500771870",
-            imagen:"imagenes/vendidos6.webp",
-            titulo:"Mi nombre es Emilia Del Valle",
-            autor:"Isabel Allende",
-            precio: 34.499
-        },
-
-    ]
-
-    const fuenteLibrosRecomendados = [
-        {
-            isbn:"9789877950908",
-            imagen:"imagenes/valorados1.webp",
-            titulo:"Amistad",
-            autor:"Mariano Sigman / Jacobo Bergareche",
-            precio: 21.999
-        },
-        {
-            isbn:"9789500216272",
-            imagen:"imagenes/valorados2.webp",
-            titulo:"Decodifica tu vida",
-            autor:"Flor Cerutti",
-            precio: 21.900
-        },
-        {
-            isbn:"9789504990994",
-            imagen:"imagenes/valorados3.webp",
-            titulo:"Por si un dia volvemos",
-            autor:"Maria Dueñas",
-            precio: 45.000
-        },
-        {
-            isbn:"9786316533258",
-            imagen:"imagenes/valorados4.webp",
-            titulo:"La libreria de Tokio",
-            autor:"Nanako Hanada",
-            precio: 16.900
-        },
-        {
-            isbn:"9789873626012",
-            imagen:"imagenes/valorados5.webp",
-            titulo:"Criaturas despiadadas",
-            autor:"J. T. Geissinger",
-            precio: 19.900
-        },
-        {
-            isbn:"9789506447557",
-            imagen:"imagenes/valorados6.webp",
-            titulo:"No tengas miedo",
-            autor:"Stephen King",
-            precio: 41.999
+        } catch (error) {
+            console.error('Error al cargar los datos:', error);
         }
-    ]
-
+    }
     //Funcion que se encarga de crear las cartas.
     //Toma como parametro de entrada arrays y el contenedor donde alojara las cartas
 
     function creaCardsHtml (fuenteLibros, librosContainer){
-
+        console.log (fuenteLibros);
+        console.log(Array.isArray(fuenteLibros));
         const cardsHtml = fuenteLibros.map(libro => {
             // comillas invertidas ` ` 
             // Las variables se insertan con ${variable}
             // Usamos template strings para escribir codigo html
-
             return `
                 <div class="libros">
                     <img src="${libro.imagen}" alt="${libro.titulo}">
@@ -203,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function randerizarLibros (){
-
+    
         //Secion novedades - Llamada a la funcion para crear Cards
         const novedadesContainer = document.getElementById("librosContainerNovedades");
         creaCardsHtml (fuenteLibrosNovedades,novedadesContainer);
@@ -219,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     }
 
-    randerizarLibros();
 
     //Obtengo el boton de contacto para abrir la pagina en una ventana emergente
     const botonContacto = document.getElementById("botonContacto");
