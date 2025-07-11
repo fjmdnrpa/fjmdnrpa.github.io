@@ -29,8 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //Toma como parametro de entrada arrays y el contenedor donde alojara las cartas
 
     function creaCardsHtml (fuenteLibros, librosContainer){
-        console.log (fuenteLibros);
-        console.log(Array.isArray(fuenteLibros));
         const cardsHtml = fuenteLibros.map(libro => {
             // comillas invertidas ` ` 
             // Las variables se insertan con ${variable}

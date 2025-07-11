@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="item-carrito">
                         <img class=imagenCarrito src="${libro.imagen}" alt="${libro.titulo}">        
                         <span class ="tituloLibro">${libro.titulo}</span>
-                        <input id="cantidad-${libro.isbn}" class="cantidadCarrito" type="number" min="1" max="100" value=${libro.cantidad} />
+                        <input id="cantidad-${libro.isbn}" class="cantidadCarrito" type="number" min="1" max="9" value=${libro.cantidad} />
                             <div>
                                 <span>$${(libro.precio * libro.cantidad).toFixed(2)}</span>
                                 <button class="btn-eliminar-item" id="eliminar-${libro.isbn}">X</button>
